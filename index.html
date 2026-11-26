@@ -1,1 +1,65 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA OS - Alpha 0.1</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte futurista do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambiente Desktop -->
+    <div id="desktop">
+        <!-- Ícones da Área de Trabalho -->
+        <div class="desktop-icon" onclick="openWindow('welcome-window')">
+            <div class="icon-symbol">📂</div>
+            <span>Bem-vindo.txt</span>
+        </div>
+
+        <!-- Janela de Boas-Vindas -->
+        <div class="os-window" id="welcome-window">
+            <div class="window-header">
+                <span class="window-title">Bem-vindo - NOVA OS</span>
+                <div class="window-controls">
+                    <button class="control-btn close" onclick="closeWindow('welcome-window')">✕</button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h2>NOVA OS v0.1 Alpha</h2>
+                <p>Ambiente operacional experimental web carregado com sucesso.</p>
+                <p>Desenvolvido com foco em alta performance, design futurista e minimalista.</p>
+                <button class="os-btn" onclick="closeWindow('welcome-window')">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Tarefas -->
+    <div id="taskbar">
+        <button id="start-btn" onclick="toggleStartMenu()">
+            <span class="start-icon">⚡</span> NOVA
+        </button>
+        <div id="taskbar-apps">
+            <!-- Atalhos abertos aparecerão aqui dinamicamente futuramente -->
+        </div>
+        <div id="system-tray">
+            <span id="clock">00:00:00</span>
+        </div>
+    </div>
+
+    <!-- Menu Iniciar -->
+    <div id="start-menu" class="hidden">
+        <div class="start-header">
+            <h3>Menu NOVA</h3>
+        </div>
+        <ul class="start-list">
+            <li onclick="openWindow('welcome-window'); toggleStartMenu();">📄 Sobre o NOVA OS</li>
+            <li onclick="alert('Aplicativos adicionais em breve na versão 0.2!'); toggleStartMenu();">🛠️ Configurações</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
