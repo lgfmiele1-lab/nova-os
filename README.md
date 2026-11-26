@@ -11,4 +11,5 @@ NOVA OS é um ambiente operacional experimental executado diretamente no navegad
 * JavaScript Moderno (Vanilla)
 
 ## 🌐 Acesso
-Você pode visualizar o sistema aqui
+Você pode visualizar o sistema aqui 
+https://lgfmiele1-lab.github.io/nova-os/
