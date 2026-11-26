@@ -1,1 +1,220 @@
 
+:root {
+    --bg-desktop: #05050a;
+    --neon-blue: #00f3ff;
+    --neon-cyan: #00d2ff;
+    --panel-bg: rgba(10, 10, 20, 0.85);
+    --border-color: rgba(0, 243, 255, 0.3);
+    --text-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+body, html {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-desktop);
+    color: var(--text-color);
+}
+
+/* Desktop */
+#desktop {
+    width: 100%;
+    height: calc(100vh - 48px);
+    position: relative;
+    padding: 20px;
+    background: radial-gradient(circle at center, #0c0c1d 0%, #030307 100%);
+}
+
+.desktop-icon {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.desktop-icon:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.icon-symbol {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.desktop-icon span {
+    font-size: 12px;
+    color: var(--neon-blue);
+    word-break: break-all;
+}
+
+/* Janelas do Sistema */
+.os-window {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 320px;
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-blue);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.window-header {
+    background: rgba(0, 243, 255, 0.15);
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.window-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: var(--neon-blue);
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+}
+
+.control-btn.close:hover {
+    background: #ff3333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.window-body {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.window-body h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: var(--neon-cyan);
+    margin-bottom: 10px;
+}
+
+.os-btn {
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.os-btn:hover {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+/* Barra de Tarefas */
+#taskbar {
+    width: 100%;
+    height: 48px;
+    background: rgba(5, 5, 10, 0.95);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+}
+
+#start-btn {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#start-btn:hover {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+#system-tray {
+    font-size: 14px;
+    color: var(--neon-cyan);
+}
+
+/* Menu Iniciar */
+#start-menu {
+    position: absolute;
+    bottom: 54px;
+    left: 10px;
+    width: 240px;
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-blue);
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+#start-menu.hidden {
+    display: none;
+}
+
+.start-header {
+    background: rgba(0, 243, 255, 0.2);
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: var(--neon-blue);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.start-list {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.start-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.start-list li:hover {
+    background: rgba(0, 243, 255, 0.15);
+    color: var(--neon-blue);
+}
